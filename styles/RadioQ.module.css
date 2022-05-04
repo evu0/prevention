@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.span{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.buttons{
+    display: flex;
+}
+
+.button{
+    border: none;
+    background-color: #fff;
+    font-size: 18px;
+    padding: 3px 0px;
+    flex: 1;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.button:focus{
+    background-color: #ccc;
+}
+
+.button:first-child{
+    border-radius: 0 10px 10px 0;
+    border-left: grey 1px solid;
+}
+
+.button:last-child{
+    border-radius: 10px 0 0 10px;
+}

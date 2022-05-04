@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title{
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 25px 0px;
+}
+
+.description{
+    font-size: 1.2rem;
+    color: rgb(57, 62, 70);
+    margin: 25px 0px;
+}
+
+@media screen and (max-width: 900px){
+    .title{
+        font-size: 3.4rem;
+        text-align: center;
+    }
+    .description{
+        font-size: 1rem;
+    }   
+}
