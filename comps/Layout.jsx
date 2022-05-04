@@ -4,7 +4,7 @@ import Content from "./Content";
 
 const Layout = ({ children }) => {
     return (  
-        <div>
+        <>
             <Navbar/>
 
             <Content>
@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
             </Content>
 
             <Footer/>
-        </div>
+        </>
     );
 }
  
