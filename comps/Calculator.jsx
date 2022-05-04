@@ -1,10 +1,9 @@
 import styles from '../styles/Calculator.module.css'
 import TextQ from './TextQ';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import RadioQ from './RadioQ';
 import Router from 'next/router';
-
-const ls = require('local-storage');
+import ls from 'local-storage';
 
 const Calculator = () => {
     const [age, setAge] = useState(0);

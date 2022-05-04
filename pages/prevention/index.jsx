@@ -1,8 +1,7 @@
 import styles from '../../styles/Prevention.module.css';
 import {PrevDB} from '../../database/PrevDB';
 import { motion } from 'framer-motion';
-
-const ls = require('local-storage');
+import ls from 'local-storage';
 
 const Prevention = () => {
     const preventionFilter = PrevDB.map((item) => {
