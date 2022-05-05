@@ -4,7 +4,7 @@ import Router from 'next/router'
 
 export default function Home() {
     const handleClick = () => {
-        Router.push('/info')
+        Router.push('/consent')
     }
   return (
     <div className={styles.container}>

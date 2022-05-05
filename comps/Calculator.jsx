@@ -61,6 +61,7 @@ const Calculator = () => {
                 question="الجنس:"
                 options={['ذكر', 'أنثى']}
                 setAnswer={setGender}
+                answer={gender}
             />
             {gender === 2 && (
                 <div className={styles.preg}>
@@ -68,6 +69,7 @@ const Calculator = () => {
                         question="هل أنتِ حامل؟"
                         options={['نعم', 'لا']}
                         setAnswer={setPreg}
+                        answer={preg}
                     />
                 </div>
             )}
@@ -75,11 +77,13 @@ const Calculator = () => {
                 question="هل أنت مدخن؟"
                 options={['نعم', 'لا']}
                 setAnswer={setSmoke}
+                answer={smoke}
             />
             <RadioQ
                 question="نشاطات جنسية؟"
                 options={['نعم', 'لا']}
                 setAnswer={setSex}
+                answer={sex}
             />
             <div className={styles.submit}>
                 <button className={styles.button} type='submit'>

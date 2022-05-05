@@ -14,6 +14,9 @@ const Prevention = () => {
                 && ( ls('screen-preg') === condition.preg || condition.preg === 0 )
                 && ( ls('screen-smoke') === condition.smoke || condition.smoke === 0 )
                 && ( ls('screen-sex') === condition.sex || condition.sex === 0 )
+                // ADD RISK FACTORS
+                // risk should be a list on database.
+                // if condition.risk.includes( ls('screen-risk') ) ??
             ){
                 return (
                     <motion.div
