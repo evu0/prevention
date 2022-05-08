@@ -6,6 +6,7 @@ import Router from 'next/router';
 import ls from 'local-storage';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { motion, AnimatePresence } from 'framer-motion';
 
 const MySwal = withReactContent(Swal)
 
@@ -29,6 +30,10 @@ const Calculator = () => {
     const [HIV, setHIV] = useState(0);
     const [bloodType, setBloodType] = useState(0);
     const [IVDrug, setIVDrug] = useState(0);
+    const [partnerBloodType, setPartnerBloodType] = useState(0);
+    const [vaccination, setVaccination] = useState(0);
+    const [steroid, setSteroid] = useState(0);
+    const [fracture, setFracture] = useState(0);
 
     const prefix = (key, value) => {
         ls.set(`screen-${key}`, value)
@@ -68,6 +73,15 @@ const Calculator = () => {
         }
     }
 
+    const variants = {
+        hide: { y: -50, opacity: 0, height: 0, transition: {
+            type: 'tween',
+        }},
+        show: { y: 0, opacity: 1, height: 'auto', transition: {
+            type: 'tween',
+        }},
+    }
+
     return ( 
         <form onSubmit={handleSubmit} className={styles.container}>
             <TextQ
@@ -89,19 +103,32 @@ const Calculator = () => {
                 answer={gender}
             />
 
+            <AnimatePresence>
             {gender === 2 && (
-                <div className={styles.preg}>
+                <motion.div
+                variants={variants}
+                initial={'hide'}
+                animate={'show'}
+                exit={'hide'}
+                >
                     <RadioQ
                         question="هل أنتِ حامل؟"
                         options={['نعم', 'لا']}
                         setAnswer={setPreg}
                         answer={preg}
                     />
-                </div>
+                </motion.div>
             )}
+            </AnimatePresence>
 
+            <AnimatePresence>
             {preg === 1 && (
-                <>
+                <motion.div
+                variants={variants}
+                initial={'hide'}
+                animate={'show'}
+                exit={'hide'}
+                >
                 <RadioQ
                     question="هل فصيلة دمك سالبة ( -B- , A- , AB- , O )؟"
                     options={['نعم', 'لا']}
@@ -111,11 +138,39 @@ const Calculator = () => {
                 <RadioQ
                 question="هل فصيلة دم شريكك موجبة ( +B+ , A+ , AB+ , O )؟"
                 options={['نعم', 'لا']}
-                setAnswer={setBloodType}
-                answer={bloodType}
+                setAnswer={setPartnerBloodType}
+                answer={partnerBloodType}
                 />
-                </>
+                </motion.div>
             )}
+            </AnimatePresence>
+
+            {/* THESE ARE RISK FACTORS FOR OSTEOPOROSIS */}
+
+            <AnimatePresence>
+            {gender === 2 && (
+            <motion.div
+            variants={variants}
+            initial={'hide'}
+            animate={'show'}
+            exit={'hide'}
+            >
+                <RadioQ
+                    question="هل تستخدم عقار الكورتيزون (Corticosteroid)؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setSteroid}
+                    answer={steroid}
+                />
+
+                <RadioQ
+                    question="هل حدثت لك كسور أو سقوطات مسبقًا؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setFracture}
+                    answer={fracture}
+                />
+            </motion.div>
+            )}
+            </AnimatePresence>
 
             <RadioQ
                 question="هل سبق لك التدخين؟"
@@ -124,14 +179,23 @@ const Calculator = () => {
                 answer={smokeb4}
             />
 
+            <AnimatePresence>
             {smokeb4 === 1 && (
-            <RadioQ
-                question="هل أنت مدخن حاليًا؟"
-                options={['نعم', 'لا']}
-                setAnswer={setSmoke}
-                answer={smoke}
-            />
+            <motion.div
+            variants={variants}
+            initial={'hide'}
+            animate={'show'}
+            exit={'hide'}
+            >
+                <RadioQ
+                    question="هل أنت مدخن حاليًا؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setSmoke}
+                    answer={smoke}
+                />
+            </motion.div>
             )}
+            </AnimatePresence>
 
             <RadioQ
                 question="هل تمارس أي نشاطات جنسية؟"
@@ -140,8 +204,14 @@ const Calculator = () => {
                 answer={sex}
             />
 
+            <AnimatePresence>
             {sex === 1 && (
-                <>
+                <motion.div
+                variants={variants}
+                initial={'hide'}
+                animate={'show'}
+                exit={'hide'}
+                >
                 <RadioQ
                     question="هل تتضمن نشاطاتك الجنسية أي علاقات من نفس جنسك؟"
                     options={['نعم', 'لا']}
@@ -160,8 +230,9 @@ const Calculator = () => {
                     setAnswer={setProtection}
                     answer={protection}
                 />
-                </>
+                </motion.div>
             )}
+            </AnimatePresence>
 
                 <RadioQ
                     question="هل لديك أي أمراض مزمنة؟"
@@ -170,8 +241,14 @@ const Calculator = () => {
                     answer={chronic}
                 />
 
+                <AnimatePresence>
                 {chronic === 1 && (
-                    <>
+                    <motion.div
+                    variants={variants}
+                    initial={'hide'}
+                    animate={'show'}
+                    exit={'hide'}
+                    >
                         <RadioQ
                             question="هل أنت مصاب بداء السكري؟"
                             options={['نعم', 'لا']}
@@ -190,8 +267,9 @@ const Calculator = () => {
                             setAnswer={setHIV}
                             answer={HIV}
                         />
-                    </>
+                    </motion.div>
                 )}
+                </AnimatePresence>
 
                 <RadioQ
                     question="هل سبق لك استخدام عقاقير غير قانونية عبر الوريد؟"
@@ -200,6 +278,12 @@ const Calculator = () => {
                     answer={IVDrug}
                 />
 
+                <RadioQ
+                    question="هل سبق وأن أخذت لقاح فيروس الكبد الوبائي ب؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setVaccination}
+                    answer={vaccination}
+                />
 
             <div className={styles.submit}>
                 <button className={styles.button} type='submit'>

@@ -350,6 +350,7 @@ export const PrevDB = [
             {
                 condition: 1,
                 frequency: 'لا يوجد معلومات',
+                // Postmenopausal
                 minAge: 0,
                 maxAge: 65,
                 bmi: 25,
