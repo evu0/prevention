@@ -4,6 +4,10 @@ import {useState} from 'react';
 import RadioQ from './RadioQ';
 import Router from 'next/router';
 import ls from 'local-storage';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const Calculator = () => {
     const [age, setAge] = useState(0);
@@ -13,7 +17,18 @@ const Calculator = () => {
     const [preg, setPreg] = useState(0);
     const [smoke, setSmoke] = useState(0);
     const [sex, setSex] = useState(0);
-    // add chronic diseases
+
+    // Risk Factors
+    const [smokeb4, setSmokeb4] = useState(0);
+    const [sameSex, setSameSex] = useState(0);
+    const [multipleSex, setMultipleSex] = useState(0);
+    const [protection, setProtection] = useState(0);
+    const [chronic, setChronic] = useState(0); 
+    const [DM, setDM] = useState(0); 
+    const [HTN, setHTN] = useState(0); 
+    const [HIV, setHIV] = useState(0);
+    const [bloodType, setBloodType] = useState(0);
+    const [IVDrug, setIVDrug] = useState(0);
 
     const prefix = (key, value) => {
         ls.set(`screen-${key}`, value)
@@ -39,8 +54,18 @@ const Calculator = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleStorage();
-        Router.push('/prevention');
+        if((gender === 0) || (smoke === 0)|| (sex === 0)){
+        MySwal.fire({
+                title: 'تأكد من الإجابة على جميع الأسئلة',
+                icon: 'error',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'الرجوع للأسئلة'
+            })
+        }else{
+            // if preg and male, preg = 0 (same for smoking...)
+            handleStorage();
+            Router.push('/prevention');
+        }
     }
 
     return ( 
@@ -63,6 +88,7 @@ const Calculator = () => {
                 setAnswer={setGender}
                 answer={gender}
             />
+
             {gender === 2 && (
                 <div className={styles.preg}>
                     <RadioQ
@@ -73,18 +99,108 @@ const Calculator = () => {
                     />
                 </div>
             )}
+
+            {preg === 1 && (
+                <>
+                <RadioQ
+                    question="هل فصيلة دمك سالبة ( -B- , A- , AB- , O )؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setBloodType}
+                    answer={bloodType}
+                />
+                <RadioQ
+                question="هل فصيلة دم شريكك موجبة ( +B+ , A+ , AB+ , O )؟"
+                options={['نعم', 'لا']}
+                setAnswer={setBloodType}
+                answer={bloodType}
+                />
+                </>
+            )}
+
             <RadioQ
-                question="هل أنت مدخن؟"
+                question="هل سبق لك التدخين؟"
+                options={['نعم', 'لا']}
+                setAnswer={setSmokeb4}
+                answer={smokeb4}
+            />
+
+            {smokeb4 === 1 && (
+            <RadioQ
+                question="هل أنت مدخن حاليًا؟"
                 options={['نعم', 'لا']}
                 setAnswer={setSmoke}
                 answer={smoke}
             />
+            )}
+
             <RadioQ
-                question="نشاطات جنسية؟"
+                question="هل تمارس أي نشاطات جنسية؟"
                 options={['نعم', 'لا']}
                 setAnswer={setSex}
                 answer={sex}
             />
+
+            {sex === 1 && (
+                <>
+                <RadioQ
+                    question="هل تتضمن نشاطاتك الجنسية أي علاقات من نفس جنسك؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setSameSex}
+                    answer={sameSex}
+                />
+                <RadioQ
+                    question="هل لديك أكثر من شريك جنسي؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setMultipleSex}
+                    answer={multipleSex}
+                />
+                <RadioQ
+                    question="هل تستخدم الواقي الذكري عند ممارسة النشاطات الجنسية؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setProtection}
+                    answer={protection}
+                />
+                </>
+            )}
+
+                <RadioQ
+                    question="هل لديك أي أمراض مزمنة؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setChronic}
+                    answer={chronic}
+                />
+
+                {chronic === 1 && (
+                    <>
+                        <RadioQ
+                            question="هل أنت مصاب بداء السكري؟"
+                            options={['نعم', 'لا']}
+                            setAnswer={setDM}
+                            answer={DM}
+                        />
+                        <RadioQ
+                            question="هل أنت مصاب بإرتفاع ضغط الدم؟"
+                            options={['نعم', 'لا']}
+                            setAnswer={setHTN}
+                            answer={HTN}
+                        />
+                        <RadioQ
+                            question="هل أنت مصاب بفيروس نقص المناعة البشرية؟"
+                            options={['نعم', 'لا']}
+                            setAnswer={setHIV}
+                            answer={HIV}
+                        />
+                    </>
+                )}
+
+                <RadioQ
+                    question="هل سبق لك استخدام عقاقير غير قانونية عبر الوريد؟"
+                    options={['نعم', 'لا']}
+                    setAnswer={setIVDrug}
+                    answer={IVDrug}
+                />
+
+
             <div className={styles.submit}>
                 <button className={styles.button} type='submit'>
                     تأكيد

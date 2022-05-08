@@ -5,13 +5,6 @@ import Router from 'next/router';
 
 
 const Consent = () => {
-    useEffect(() => {
-        if (ls.get('screen-consent') === true) {
-            Router.push('/info');
-        }else{
-            window.scrollTo(0, 0);
-        }
-    }, []);
     const [consent, setConsent] = useState();
 
     const handleSubmit = (e) => {
@@ -29,7 +22,7 @@ const Consent = () => {
                     </div>
                     <div className={styles.content}>
                         <span>
-                            يتطلب عليك لاستخدام تطبيق كشوفاتي تسجيل بياناتك الشخصية ليتمكن من تحديد الفحوصات اللازمة لك؛
+                            يتطلب عليك لاستخدام تطبيق كشوفاتي تسجيل بياناتك الشخصية لينمكن من تحديد الفحوصات اللازمة لك؛
                             فأعلم رعاك الله أن جميع بياناتك المستخدمة في التطبيق لا يتم تخزينها أو نشرها بأي شكل من الأشكال,
                             يضمن لك تطبيق كشوفاتي الأمان والسرية لجميع بياناتك.
                         </span>

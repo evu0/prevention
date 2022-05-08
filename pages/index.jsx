@@ -1,11 +1,17 @@
 import Land from '../comps/Land'
 import styles from '../styles/Home.module.css'
 import Router from 'next/router'
+import ls from 'local-storage'
 
 export default function Home() {
     const handleClick = () => {
+      if (ls.get('screen-consent') === true){
+        Router.push('/info')
+      }else{
         Router.push('/consent')
-    }
+      }
+    };
+
   return (
     <div className={styles.container}>
       <div className={styles.right}>

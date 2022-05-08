@@ -8,6 +8,7 @@ const TextQ = (props) => {
                 type="text"
                 className={styles.input}
                 placeholder="الإجابة"
+                required
                 // set value of a prop in the parent component
                 name={props.name}
                 onChange={(e)=>props.setAnswer(e.target.value)}
