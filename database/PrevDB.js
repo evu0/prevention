@@ -1,5 +1,5 @@
 export const PrevDB = [
-// Chronic conditions: 
+// risk conditions: 
 // 0 = Doesn't matter, 1 = Yes, 2 = No
 // Male = 1, Female = 2
 // BRCA-Related Cancer?? https://www.uspreventiveservicestaskforce.org/webview/#!/topic/413
@@ -16,9 +16,10 @@ export const PrevDB = [
                 bmi: 25,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
             {
                 condition: 2,
@@ -28,9 +29,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -47,10 +49,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 1,
                 preg: 0,
-                smoke: 1,
-                // ever smoker.
+                menopause: 0,
+                smokeb4: 1,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -67,9 +69,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 1,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -86,9 +89,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -105,10 +109,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 0,
-                smoke: 0,
-                sex: 0,
-                // because of potential exposure to high-risk HPV through sexual intercourse?
-                chronic: 0,
+                menopause: 0,
+                smokeb4: 0,
+                sex: 1,
+                risk: [0],
             },
             {
                 condition: 2,
@@ -118,9 +122,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -132,28 +137,28 @@ export const PrevDB = [
             {
                 condition: 1,
                 frequency: 'لا توجد معلومات دقيقة',
-                // ???
                 minAge: 0,
                 maxAge: 24,
                 bmi: 0,
                 gender: 2,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 1,
-                chronic: 0,
+                risk: [0],
             },
             {
                 condition: 2,
                 frequency: 'إذا تواجدت عوامل خطر',
-                // lack of barrier protection, multiple partners.
                 minAge: 25,
                 maxAge: 999,
                 bmi: 0,
                 gender: 2,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 1,
-                chronic: 0,
+                risk: ['riskySex'],
             },
         ]
     },
@@ -170,9 +175,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -189,9 +195,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -208,10 +215,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 1,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
-                // Doesn't have DM
+                risk: ['noDM'],
             },
             
         ]
@@ -232,10 +239,11 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 2,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
-                // Risk factors:  HIV-positive persons, IV drug users, unvaccinated individuals, individuals from endemic regions with prevalence ≥ 8%
+                risk: ['HIV', 'IV', 'unvaccinated'],
+                // individuals from endemic regions with prevalence ≥ 8%
             },
             {
                 condition: 2,
@@ -245,10 +253,11 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 1,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
-                // Risk factors:  HIV-positive persons, IV drug users, unvaccinated individuals, individuals from endemic regions with prevalence ≥ 8%
+                risk: ['HIV', 'IV', 'unvaccinated'],
+                // individuals from endemic regions with prevalence ≥ 8%
             },
         ]
     },
@@ -265,9 +274,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: ['unvaccinated'],
             },
             {
                 // In high risk group
@@ -278,32 +288,33 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
-                // IV drug users, individuals who received blood transfusions before 1992, individuals with sexual partners at high risk
+                risk: ['IV', 'riskySex'],
             },
         ]
     },
-    {
-        id: 13,
-        title: 'عدوى السل',
-        importance: '',
-        conditions: [
-            {
-                condition: 1,
-                frequency: 'لا يوجد معلومات',
-                minAge: 0,
-                maxAge: 999,
-                bmi: 0,
-                gender: 0,
-                preg: 0,
-                smoke: 0,
-                sex: 0,
-                chronic: 0,
-            },// for population with increased prevalence, at increased risk (person who born in or a former resident of countries with increased TB prevalence, or lived in high-risk congregate settings like homeless shelters and correctional facilities.
-        ]
-    },
+    // {
+    //     id: 13,
+    //     title: 'عدوى السل',
+    //     importance: '',
+    //     conditions: [
+    //         {
+    //             condition: 1,
+    //             frequency: 'لا يوجد معلومات',
+    //             minAge: 0,
+    //             maxAge: 999,
+    //             bmi: 0,
+    //             gender: 0,
+    //             preg: 0,
+    //             menopause: 0,
+    //             smokeb4: 0,
+    //             sex: 0,
+    //             risk: [0], // ????
+    //         },// for population with increased prevalence, at increased risk (person who born in or a former resident of countries with increased TB prevalence, or lived in high-risk congregate settings like homeless shelters and correctional facilities.
+    //     ]
+    // },
     {
         id: 14,
         title: 'قياس مؤشر كتلة الجسم',
@@ -317,9 +328,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -336,10 +348,11 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 1,
+                menopause: 0,
+                smokeb4: 1,
                 sex: 0,
-                chronic: 0,
-            },// we should put the smoking years (screening for 20 pack-year smoking history, current smoker, quit within the past 15 years. Screening stops if not smoked for 15 years or develops health problem that limits life expectancy
+                risk: [0],
+            },// we should put the smoking years (screening for 20 pack-year smoking history, current smokeb4r, quit within the past 15 years. Screening stops if not smokeb4d for 15 years or develops health problem that limits life expectancy
         ]
     },
     {
@@ -350,15 +363,15 @@ export const PrevDB = [
             {
                 condition: 1,
                 frequency: 'لا يوجد معلومات',
-                // Postmenopausal
-                minAge: 0,
+                minAge: 45,
                 maxAge: 65,
-                bmi: 25,
+                bmi: 0,
                 gender: 2,
                 preg: 0,
-                smoke: 0,
+                menopause: 1,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: ['lowBmi', 'smoker', 'steroid', 'fracture'],
             },// with increased risk (low BMI, excessive alcohol consumption, current smoking, long-term corticosteroid use, previous fractures, history of falls within the past year)
             {
                 condition: 2,
@@ -368,9 +381,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },// for all who are above 65 with or without risk factors
         ]
     },
@@ -387,9 +401,10 @@ export const PrevDB = [
                 bmi: 25,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -406,9 +421,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 1,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -425,9 +441,10 @@ export const PrevDB = [
                 bmi: 25,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },// oral fluoride supplements at age 6 months who water supply is deficient in fluoride, fluoride varnish to the primary teeth of all infants and children starting at the age of primary tooth eruption
         ]
     },
@@ -444,9 +461,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 1,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
             {
                 condition: 2,
@@ -456,9 +474,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 1,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: ['bloodType'],
             },//for unsensitized Rh(D) negative pregnant women, unless biological father is known to be Rh negative
         ]
     },
@@ -475,9 +494,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: ['homo','HIV'],
             },//for at increased risk for infection (homosexuals, person living with HIV partner, history of incarceration, history of commercial sex work, male younger than 29 years)
             {
                 condition: 2,
@@ -487,9 +507,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 2,
                 preg: 1,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },//to prevent transmission to the fetus
         ]
     },
@@ -506,9 +527,10 @@ export const PrevDB = [
                 bmi: 0,
                 gender: 0,
                 preg: 0,
-                smoke: 0,
+                menopause: 0,
+                smokeb4: 0,
                 sex: 0,
-                chronic: 0,
+                risk: [0],
             },
         ]
     },
@@ -525,11 +547,13 @@ export const PrevDB = [
                 //             minAge: 18,
                 //             maxAge: 999,
                 //             bmi: 0,
+        
                 //             gender: 0,
                 //             preg: 0,
-                //             smoke: 0,
+                // menopause: 0,
+                //             smokeb4: 0,
                 //             sex: 0,
-                //             chronic: 0,
+                //             risk: 0,
                 //         },// engage in risky or hazardous drinking
                 //     ]
                 // },
@@ -544,11 +568,13 @@ export const PrevDB = [
             //             minAge: 18,
             //             maxAge: 999,
             //             bmi: 0,
+    
             //             gender: 0,
             //             preg: 0,
-            //             smoke: 0,
+            // menopause: 0,
+            //             smokeb4: 0,
             //             sex: 0,
-            //             chronic: 0,
+            //             risk: 0,
             //         },//Should be asked when there are services for accurate diagnosis, effective treatment, and appropriate care can be offered or referred (this is the frequency)
             //     ]
             // },
@@ -563,11 +589,13 @@ export const PrevDB = [
             //             minAge: 15,
             //             maxAge: 49,
             //             bmi: 0,
+    
             //             gender: 2,
             //             preg: 0,
-            //             smoke: 0,
+            // menopause: 0,
+            //             smokeb4: 0,
             //             sex: 0,
-            //             chronic: 0,
+            //             risk: 0,
             //         },
             //     ]
             // },
@@ -594,9 +622,10 @@ export const PrevDB = [
     //             bmi: 0,
     //             gender: 0,
     //             preg: 0,
-    //             smoke: 0,
+    // menopause: 0,
+    //             smokeb4: 0,
     //             sex: 0,
-    //             chronic: 'DM'
+    //             risk: 'DM'
     //         },
     //         {
     //             condition: 2,
@@ -605,9 +634,10 @@ export const PrevDB = [
     //             maxAge: 45,
     //             gender: 1,
     //             preg: 0,
-    //             smoke: 0,
+    // menopause: 0,
+    //             smokeb4: 0,
     //             sex: 0,
-    //             chronic: 0
+    //             risk: 0
     //         },
     //         {
     //             condition: 3,
@@ -617,9 +647,10 @@ export const PrevDB = [
     //             bmi: 0,
     //             gender: 2,
     //             preg: 0,
-    //             smoke: 0,
+    // menopause: 0,
+    //             smokeb4: 0,
     //             sex: 0,
-    //             chronic: 0
+    //             risk: 0
     //         },
     //         {
     //             condition: 4,
@@ -628,9 +659,10 @@ export const PrevDB = [
     //             maxAge: 65,
     //             gender: 1,
     //             preg: 0,
-    //             smoke: 0,
+    // menopause: 0,
+    //             smokeb4: 0,
     //             sex: 0,
-    //             chronic: 0
+    //             risk: 0
     //         },
     //         {
     //             condition: 5,
@@ -640,9 +672,10 @@ export const PrevDB = [
     //             bmi: 0,
     //             gender: 2,
     //             preg: 0,
-    //             smoke: 0,
+    // menopause: 0,
+    //             smokeb4: 0,
     //             sex: 0,
-    //             chronic: 0
+    //             risk: 0
     //         },
     //         {
     //             condition: 6,
@@ -652,9 +685,10 @@ export const PrevDB = [
     //             bmi: 0,
     //             gender: 2,
     //             preg: 0,
-    //             smoke: 0,
+    // menopause: 0,
+    //             smokeb4: 0,
     //             sex: 0,
-    //             chronic: 0
+    //             risk: 0
     //         },
     //         {
     //             condition: 7,
@@ -664,9 +698,10 @@ export const PrevDB = [
     //             bmi: 0,
     //             gender: 2,
     //             preg: 0,
-    //             smoke: 0,
+    // menopause: 0,
+    //             smokeb4: 0,
     //             sex: 0,
-    //             chronic: 0
+    //             risk: 0
     //         },
     //         // stopped at pedia
     //     ]

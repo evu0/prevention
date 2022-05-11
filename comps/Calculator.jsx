@@ -1,9 +1,9 @@
 import styles from '../styles/Calculator.module.css'
 import TextQ from './TextQ';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import RadioQ from './RadioQ';
 import Router from 'next/router';
-import ls from 'local-storage';
+import ls, { set } from 'local-storage';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,11 +16,12 @@ const Calculator = () => {
     const [height, setHeight] = useState(0);
     const [gender, setGender] = useState(0);
     const [preg, setPreg] = useState(0);
-    const [smoke, setSmoke] = useState(0);
+    const [smokeb4, setSmokeb4] = useState(0);   
     const [sex, setSex] = useState(0);
+    let risk = [];
 
     // Risk Factors
-    const [smokeb4, setSmokeb4] = useState(0);
+    const [smoke, setSmoke] = useState(0);
     const [sameSex, setSameSex] = useState(0);
     const [multipleSex, setMultipleSex] = useState(0);
     const [protection, setProtection] = useState(0);
@@ -34,6 +35,7 @@ const Calculator = () => {
     const [vaccination, setVaccination] = useState(0);
     const [steroid, setSteroid] = useState(0);
     const [fracture, setFracture] = useState(0);
+    const [menopause, setMenoPause] = useState(0);
 
     const prefix = (key, value) => {
         ls.set(`screen-${key}`, value)
@@ -53,21 +55,69 @@ const Calculator = () => {
         prefix('bmi', bmiCal(weight, height));
         prefix('gender', gender*1);
         prefix('preg', preg*1);
-        prefix('smoke', smoke*1);
+        prefix('smokeb4', smokeb4*1);
         prefix('sex', sex*1);
+        if(bmiCal(weight, height) < 18.5){
+            risk.push('lowBmi')
+        }
+        if(multipleSex === 1 || protection === 2){
+            risk.push('riskySex')
+        }
+        if(DM === 2){
+            risk.push('noDM')
+        }
+        if(HIV === 1){
+            risk.push('HIV')
+        }
+        if(IVDrug === 1){
+            risk.push('IV')
+        }
+        if(vaccination === 2){
+            risk.push('unvaccinated')
+        }
+        if(smoke === 1){
+            risk.push('smoker')
+        }
+        if(steroid === 1){
+            risk.push('steroid')
+        }
+        if(fracture === 1){
+            risk.push('fracture')
+        }
+        if(menopause === 1){
+            risk.push('menopause')
+        }
+        if(bloodType === 1 && partnerBloodType === 1){
+            risk.push('bloodType')
+        }
+        if(sameSex === 1){
+            risk.push('homo')
+        }
+        prefix('risk', risk)
+
+    }
+
+    const popup = ()=>{
+        MySwal.fire({
+            title: 'تأكد من الإجابة على جميع الأسئلة',
+            icon: 'error',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'الرجوع للأسئلة'
+        })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if((gender === 0) || (smoke === 0)|| (sex === 0)){
-        MySwal.fire({
-                title: 'تأكد من الإجابة على جميع الأسئلة',
-                icon: 'error',
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'الرجوع للأسئلة'
-            })
+        if(
+            (gender === 0) || (smokeb4 === 0)|| (sex === 0) || (chronic === 0) || (IVDrug === 0) || (vaccination === 0)
+            || (gender === 2 && ((age >= 45 && age < 55 && menopause === 0) || preg === 0 || steroid === 0 || fracture === 0))
+            || (preg === 1 && (bloodType === 0 || partnerBloodType === 0))
+            || (smokeb4 === 1 && (smoke === 0))
+            || (sex === 1 && (sameSex === 0 || multipleSex === 0 || protection === 0))
+            || (chronic === 1 && (DM === 0 || HIV === 0))
+            ){
+            popup();
         }else{
-            // if preg and male, preg = 0 (same for smoking...)
             handleStorage();
             Router.push('/prevention');
         }
@@ -81,7 +131,31 @@ const Calculator = () => {
             type: 'tween',
         }},
     }
-
+    // useEffect when male then --> preg = 0
+    useEffect(()=>{
+        if(gender === 1){
+            setMenoPause(0)
+            setPreg(0)
+            setSteroid(0)
+            setFracture(0)
+        }
+        if(smokeb4 === 2){
+            setSmoke(0)
+        }
+        if(sex === 2){
+            setSameSex(0)
+            setMultipleSex(0)
+            setProtection(0)
+        }
+        if(chronic === 2){
+            setDM(0)
+            setHIV(0)
+        }
+        if(preg === 2){
+            setBloodType(0)
+            setPartnerBloodType(0)
+        }
+    },[gender, smokeb4, sex, chronic, preg])
     return ( 
         <form onSubmit={handleSubmit} className={styles.container}>
             <TextQ
@@ -102,6 +176,23 @@ const Calculator = () => {
                 setAnswer={setGender}
                 answer={gender}
             />
+
+            <AnimatePresence>
+            {gender === 2 && age >= 45 && age < 55 && (
+                <motion.div
+                variants={variants}
+                initial={'hide'}
+                animate={'show'}
+                exit={'hide'}>
+                    <RadioQ
+                        question="هل أنتِ في سن اليأس؟"
+                        options={['نعم', 'لا']}
+                        setAnswer={setMenoPause}
+                        answer={menopause}
+                    />
+                </motion.div>
+            )}
+            </AnimatePresence>
 
             <AnimatePresence>
             {gender === 2 && (
@@ -255,12 +346,12 @@ const Calculator = () => {
                             setAnswer={setDM}
                             answer={DM}
                         />
-                        <RadioQ
+                        {/* <RadioQ
                             question="هل أنت مصاب بإرتفاع ضغط الدم؟"
                             options={['نعم', 'لا']}
                             setAnswer={setHTN}
                             answer={HTN}
-                        />
+                        /> */}
                         <RadioQ
                             question="هل أنت مصاب بفيروس نقص المناعة البشرية؟"
                             options={['نعم', 'لا']}

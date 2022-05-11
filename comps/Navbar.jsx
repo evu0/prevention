@@ -38,7 +38,7 @@ const Navbar = ({children}) => {
                 whileHover={{color: '#00b085'}}
                 transition={{duration: 0.5}}
                 className={styles.logo}>
-                    كشوفاتي
+                    فحوصاتي
                 </motion.a>
             </Link>
 
