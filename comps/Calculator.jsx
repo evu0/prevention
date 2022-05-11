@@ -135,7 +135,7 @@ const Calculator = () => {
     useEffect(()=>{
         if(gender === 1){
             setMenoPause(0)
-            setPreg(0)
+            setPreg(2)
             setSteroid(0)
             setFracture(0)
         }
