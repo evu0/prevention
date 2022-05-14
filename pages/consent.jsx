@@ -18,7 +18,7 @@ const Consent = () => {
             <form onSubmit={handleSubmit} className={styles.container}>
                 <div className={styles.card}>
                     <div className={styles.title}>
-                        <span>شروط الإستخدام</span>
+                        <span>ملاحظة</span>
                     </div>
                     <div className={styles.content}>
                         <span>

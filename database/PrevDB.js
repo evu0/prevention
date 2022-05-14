@@ -5,7 +5,7 @@ export const PrevDB = [
 // BRCA-Related Cancer?? https://www.uspreventiveservicestaskforce.org/webview/#!/topic/413
     {
         id: 1,
-        title: 'ارتفاع ضغط الدم',
+        title: 'قياس ضغط الدم',
         importance: '',
         conditions: [
             {
@@ -337,7 +337,7 @@ export const PrevDB = [
     },
     {
         id: 15,
-        title: 'سرطان الرئة',
+        title: 'فحص سرطان الرئة',
         importance: '',
         conditions: [
             {
@@ -357,7 +357,7 @@ export const PrevDB = [
     },
     {
         id: 16,
-        title: 'هشاشة العظام',
+        title: 'فحص هشاشة العظام',
         importance: '',
         conditions: [
             {
@@ -390,7 +390,7 @@ export const PrevDB = [
     },
     {
         id: 17,
-        title: 'مرض السكري',
+        title: 'فحص سكر الدم',
         importance: '',
         conditions: [
             {
@@ -410,7 +410,7 @@ export const PrevDB = [
     },
     {
         id: 18,
-        title: 'تسمم الحمل',
+        title: 'فحص تسمم الحمل',
         importance: '',
         conditions: [
             {
@@ -430,7 +430,7 @@ export const PrevDB = [
     },
     {
         id: 19,
-        title: 'تسوس الأسنان',
+        title: 'فحص تسوس الأسنان',
         importance: '',
         conditions: [
             {
@@ -450,7 +450,7 @@ export const PrevDB = [
     },
     {
         id: 20,
-        title: 'عدم توافق العامل الريزيسي',
+        title: 'فحص عدم توافق العامل الريزيسي',
         importance: '',
         conditions: [
             {
@@ -468,7 +468,7 @@ export const PrevDB = [
             },
             {
                 condition: 2,
-                frequency: 'إعادة الفحص فالأسبوع ٢٤ - ٢٨ من الحمل',
+                frequency: 'إعادة الفحص في الأسبوع ٢٤ - ٢٨ من الحمل',
                 minAge: 0,
                 maxAge: 999,
                 bmi: 0,
@@ -483,7 +483,7 @@ export const PrevDB = [
     },
     {
         id: 21,
-        title: 'مرض الزهري',
+        title: 'فحص مرض الزهري',
         importance: '',
         conditions: [
             {

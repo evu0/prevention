@@ -1,0 +1,38 @@
+.container{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.story{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.difference{
+    flex: 1;
+}
+
+.title{
+    /* 3rem for mobile */
+    font-size: 50px;
+    font-weight: 800;
+    /* color: #fff; */
+    mix-blend-mode: overlay;
+}
+
+.storytext{
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    mix-blend-mode: overlay;
+}
+
+@media screen and (max-width: 900px){
+    .container{
+        height: auto;
+    }
+}
