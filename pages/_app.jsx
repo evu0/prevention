@@ -1,10 +1,17 @@
 import Layout from '../comps/Layout'
 import '../styles/globals.css'
 import {motion} from 'framer-motion'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps, router }) {
   return(
     <>
+
+    <Head>
+      {/* <title>{router.pathname.replace('/', '')}</title> */}
+      <title>فحوصاتي</title>
+    </Head>
+
     <Layout>
       <motion.div
         initial={{ opacity: 0 }}

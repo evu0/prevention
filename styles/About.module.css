@@ -21,14 +21,14 @@
     font-size: 50px;
     font-weight: 800;
     /* color: #fff; */
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
 }
 
 .storytext{
     font-size: 20px;
     font-weight: 400;
     text-align: center;
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
 }
 
 @media screen and (max-width: 900px){
