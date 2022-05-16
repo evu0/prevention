@@ -10,7 +10,7 @@ const Consent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         ls.set('screen-consent', true);
-        Router.push('/info');
+        Router.push('/questions');
     }
 
     return (  
