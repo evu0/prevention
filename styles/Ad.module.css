@@ -25,3 +25,12 @@
 .top{
     font-size: 1.5em;
 }
+
+@media screen and (max-width: 900px){
+    .container{
+        margin: 20px 0px;
+    }
+    .top{
+        font-size: 1.2em;
+    }
+}

@@ -277,21 +277,7 @@ export const PrevDB = [
                 menopause: 0,
                 smokeb4: 0,
                 sex: 0,
-                risk: ['unvaccinated'],
-            },
-            {
-                // In high risk group
-                condition: 2,
-                frequency: 'الفحص بشكل دوري',
-                minAge: 18,
-                maxAge: 79,
-                bmi: 0,
-                gender: 0,
-                preg: 0,
-                menopause: 0,
-                smokeb4: 0,
-                sex: 0,
-                risk: ['IV', 'riskySex'],
+                risk: ['unvaccinated', 'IV', 'riskySex'],
             },
         ]
     },

@@ -14,7 +14,7 @@ const Card = (props) => {
             borderColor: '#ccc'
         }
     }
-    const contentVariants = {
+    const titleVariants = {
         open: {
             borderBottom : '1px solid #ccc',
             marginBottom: '2px',
@@ -24,6 +24,17 @@ const Card = (props) => {
             marginBottom: '0px',
         }
     }
+    const contentVariants = {
+        open: {
+            opacity: 1,
+            y: 0,
+        },
+        closed: {
+            opacity: 0,
+            y: -20,
+            height: 0,
+        },
+    }
     const clickHandler = () => {
         setClick(!click);
         console.log(click);
@@ -31,24 +42,24 @@ const Card = (props) => {
     return (  
         <div className={styles.container}>
 
-            <motion.details
+            <motion.div
+            onClick={clickHandler}
             variants={cardVariants}
             animate={click ? 'open' : 'closed'}
-            exit={'closed'}
             transition={{type: 'tween'}}
             className={styles.card}>
-                <motion.summary
-                variants={contentVariants}
+                <motion.div
+                variants={titleVariants}
                 animate={click ? 'open' : 'closed'}
                 transition={{type: 'tween'}}
-                className={styles.title} key={`${props.key}-title`} onClick={clickHandler}>
+                className={styles.title} key={`${props.key}-title`}>
                     {props.title}
-                </motion.summary>
+                </motion.div>
 
                     <motion.div
                     key={`${props.key}-content`}
-                    initial={{y:-20, opacity:0}}
-                    whileInView={{y:0, opacity:1}}
+                    variants={contentVariants}
+                    animate={click ? 'open' : 'closed'}
                     transition={{type: "tween"}}
                     className={styles.details}>
                         <span className={styles.content}>
@@ -66,7 +77,7 @@ const Card = (props) => {
                             {props.importance}
                         </span>
                     </motion.div>
-            </motion.details>
+            </motion.div>
         </div>
     );
 }
