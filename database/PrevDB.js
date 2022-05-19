@@ -165,7 +165,7 @@ export const PrevDB = [
     {
         id: 7,
         title: 'فحص سرطان القولون',
-        importance: '',
+        importance: 'الكشف المبكر لأورام القولون ومعالجتها',
         conditions: [
             {
                 condition: 1,

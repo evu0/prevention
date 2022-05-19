@@ -3,6 +3,7 @@ import {PrevDB} from '../../database/PrevDB';
 import { motion } from 'framer-motion';
 import ls from 'local-storage';
 import { useEffect } from 'react';
+import Card from '../../comps/Card';
 
 const Prevention = () => {
     
@@ -19,20 +20,12 @@ const Prevention = () => {
                 && ( ( ls('screen-risk') != null && ls('screen-risk').some(element => { return condition.risk.includes(element) }) ) || condition.risk.includes(0) )
             ){
                 return (
-                    console.log(condition.risk),
-                    <motion.div
-                    whileHover={{borderRightWidth: '10px', borderColor: 'rgb(0, 173, 181)'}}
-                    transition={{type: 'tween'}}
-                    className={styles.card}
-                    key={`${item.id}-${condition.id}-card`}
-                    >
-                        <div
-                        key={`${item.id}-${condition.id}`}
-                        className={styles.cardHeader}>
-                            <span>{item.title}</span>
-                            {/* <h4>{condition.frequency}</h4> */}
-                        </div>
-                    </motion.div>
+                    <Card
+                    key={`${item.key}-${condition.id}`}
+                    title={item.title}
+                    frequency={condition.frequency}
+                    importance={item.importance}
+                    />
                 );
                 }
         })
