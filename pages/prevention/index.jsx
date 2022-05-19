@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import ls from 'local-storage';
 import { useEffect } from 'react';
 import Card from '../../comps/Card';
+import Ad from '../../comps/Ad';
 
 const Prevention = () => {
     
@@ -34,6 +35,9 @@ const Prevention = () => {
     return (  
         <div className={styles.container}>
             {preventionFilter}
+            <Ad
+            text="أحجز موعد لفحوصاتك في مستشفى المواساة الآن"
+            />
         </div>
     );
 }

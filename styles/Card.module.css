@@ -6,6 +6,15 @@
     padding: 10px 20px;
 }
 
+.card > summary {
+    list-style: none;
+}
+  
+.card > summary::marker, /* Latest Chrome, Edge, Firefox */ 
+.card > summary::-webkit-details-marker /* Safari */ {
+    display: none;
+}
+
 .title{
     font-weight: 600;
     font-size: 1.7rem;
@@ -15,6 +24,13 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.content{
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    padding: 2px 0px;
 }
 
 @media screen and (max-width: 900px){
