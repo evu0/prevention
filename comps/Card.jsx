@@ -28,11 +28,20 @@ const Card = (props) => {
         open: {
             opacity: 1,
             y: 0,
+            height: 'auto',
+            transition: {
+                duration: 0.5,
+                ease: [0.6, 0.05, -0.01, 0.9]
+            }
         },
         closed: {
             opacity: 0,
             y: -20,
             height: 0,
+            transition: {
+                duration: 0.5,
+                ease: [0.6, 0.05, -0.01, 0.9]
+            }
         },
     }
     const clickHandler = () => {
@@ -56,10 +65,15 @@ const Card = (props) => {
                     {props.title}
                 </motion.div>
 
+                <AnimatePresence>
+                    {click && (
+
                     <motion.div
                     key={`${props.key}-content`}
                     variants={contentVariants}
-                    animate={click ? 'open' : 'closed'}
+                    initial='closed'
+                    animate='open'
+                    exit='closed'
                     transition={{type: "tween"}}
                     className={styles.details}>
                         <span className={styles.content}>
@@ -77,6 +91,9 @@ const Card = (props) => {
                             {props.importance}
                         </span>
                     </motion.div>
+                    )}
+                </AnimatePresence>
+
             </motion.div>
         </div>
     );

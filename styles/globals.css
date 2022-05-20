@@ -1,6 +1,7 @@
 * {
   font-family: 'Cairo', sans-serif;
   color: rgb(34, 40, 49);
+  user-select: none;
 }
 
 body{
