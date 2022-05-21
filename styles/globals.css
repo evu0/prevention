@@ -13,6 +13,8 @@ button{
   cursor: pointer;
 }
 
+input { -webkit-user-select:text;}
+
   /*
   Color Pallete:
   rgb(34, 40, 49) Black
