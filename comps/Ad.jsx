@@ -5,6 +5,7 @@ import Link from 'next/link';
 const Ad = (props) => {
     return (  
         <>
+            <Link href={'https://appointment.mouwasat.com'}>
             <motion.div
             initial={{opacity:0}}
             animate={{opacity:1}}
@@ -12,15 +13,14 @@ const Ad = (props) => {
             className={styles.container}>
                 <div className={styles.ad}>
                     <div className={styles.content}>
-                        <Link href={'https://appointment.mouwasat.com'}>
                         <a className={`${styles.text} ${styles.top}`}>
                             {/* Can be a logo too */}
                            {props.text} 
                         </a>
-                        </Link>
                     </div> 
                 </div>
             </motion.div>
+            </Link>
         </>
     );
 }
