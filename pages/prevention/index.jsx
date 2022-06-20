@@ -5,6 +5,7 @@ import ls from 'local-storage';
 import { useEffect } from 'react';
 import Card from '../../comps/Card';
 import Ad from '../../comps/Ad';
+import SecondaryButton from '../../comps/SecondaryButton';
 
 const Prevention = () => {
     
@@ -12,7 +13,7 @@ const Prevention = () => {
         const result = item.conditions.map((condition) => {
             // 0 = Doesn't matter, 1 = Yes, 2 = No
             if (
-                ls('screen-age') >= condition.minAge && ls('screen-age') < condition.maxAge
+                ls('screen-age') >= condition.minAge && ls('screen-age') <= condition.maxAge
                 && ls('screen-bmi') >= condition.bmi
                 && ( ls('screen-gender') === condition.gender || condition.gender === 0 )
                 && ( ls('screen-preg') === condition.preg || condition.preg === 0 )
@@ -28,16 +29,27 @@ const Prevention = () => {
                     importance={item.importance}
                     />
                 );
-                }
+            }
         })
         return result;
     })
     return (  
         <div className={styles.container}>
             {preventionFilter}
+
+            {/* Buttons */}
+            <div className={styles.buttons}>
+
             <Ad
             text="أحجز موعد لفحوصاتك في مستشفى المواساة الآن"
             />
+
+            <SecondaryButton
+            text="تعديل المدخلات"
+            link="/questions"
+            />
+
+            </div>
         </div>
     );
 }

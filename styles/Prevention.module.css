@@ -11,11 +11,23 @@
     font-size: 1.7rem;
 }
 
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 900px){
     .cardHeader{
         font-size: 1.5rem;
     }
     .card{
         margin: 20px 0px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .buttons{
+        flex-wrap: wrap;
     }
 }

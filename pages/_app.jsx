@@ -2,8 +2,11 @@ import Layout from '../comps/Layout'
 import '../styles/globals.css'
 import {motion} from 'framer-motion'
 import Head from 'next/head'
+import Router from 'next/router'
 
 function MyApp({ Component, pageProps, router }) {
+
+
   return(
     <>
 

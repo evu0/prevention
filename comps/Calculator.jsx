@@ -36,6 +36,9 @@ const Calculator = () => {
     const [steroid, setSteroid] = useState(0);
     const [fracture, setFracture] = useState(0);
     const [menopause, setMenoPause] = useState(0);
+    const [smokingYears, setSmokingYears] = useState(0);
+    const [smokingAmount, setSmokingAmount] = useState(0);
+    const [packYear, setPackYear] = useState(0);
 
     const prefix = (key, value) => {
         ls.set(`screen-${key}`, value)
@@ -49,7 +52,11 @@ const Calculator = () => {
         return Math.round( (kg*1) / ( toMeter(cm) * toMeter(cm) ) ).toFixed(2)*1;
     }
 
+    const packs = (years, amount) => {
+        return Math.round( (amount/20) * years )
+    }
 
+    // Save to local storage
     const handleStorage = () => {
         prefix('age', age*1);
         prefix('bmi', bmiCal(weight, height));
@@ -57,6 +64,7 @@ const Calculator = () => {
         prefix('preg', preg*1);
         prefix('smokeb4', smokeb4*1);
         prefix('sex', sex*1);
+        prefix('packs', packs(smokingYears, smokingAmount))
         if(bmiCal(weight, height) < 18.5){
             risk.push('lowBmi')
         }
@@ -93,6 +101,9 @@ const Calculator = () => {
         if(sameSex === 1){
             risk.push('homo')
         }
+        if(packs(smokingYears, smokingAmount) >= 20){
+            risk.push('packs')
+        }
         prefix('risk', risk)
 
     }
@@ -112,7 +123,7 @@ const Calculator = () => {
             (gender === 0) || (smokeb4 === 0)|| (sex === 0) || (chronic === 0) || (IVDrug === 0) || (vaccination === 0)
             || (gender === 2 && ((age >= 45 && age < 55 && menopause === 0) || preg === 0 || steroid === 0 || fracture === 0))
             || (preg === 1 && (bloodType === 0 || partnerBloodType === 0))
-            || (smokeb4 === 1 && (smoke === 0))
+            || (smokeb4 === 1 && ( (smoke === 0) || (smokingAmount === 0) || (smokingYears === 0) ))
             || (sex === 1 && (sameSex === 0 || multipleSex === 0 || protection === 0))
             || (chronic === 1 && (DM === 0 || HIV === 0))
             ){
@@ -283,6 +294,14 @@ const Calculator = () => {
                     options={['نعم', 'لا']}
                     setAnswer={setSmoke}
                     answer={smoke}
+                />
+                <TextQ
+                    question="كم سنة دخنت؟"
+                    setAnswer={setSmokingYears}
+                />
+                <TextQ
+                    question="كم سيجارة تدخن في اليوم؟"
+                    setAnswer={setSmokingAmount}
                 />
             </motion.div>
             )}
