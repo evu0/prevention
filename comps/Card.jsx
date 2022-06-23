@@ -1,6 +1,7 @@
 import styles from '../styles/Card.module.css'
 import { AnimatePresence, motion } from 'framer-motion';
 import {useState} from 'react'
+import Link from 'next/link';
 
 const Card = (props) => {
     const [click, setClick] = useState(false);
@@ -89,6 +90,14 @@ const Card = (props) => {
                             </b>
                             &nbsp;
                             {props.importance}
+                            &nbsp;
+                            
+                            <Link href={props.link}>
+                                <a className={styles.link}>
+                                    أضغط هنا لمعرفة المزيد
+                                </a>
+                            </Link>
+
                         </span>
                     </motion.div>
                     )}

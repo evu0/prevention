@@ -51,14 +51,15 @@ const Navbar = ({children}) => {
                 </motion.a>
             </Link>
 
+            <Link href={'/contact'}>
                 <motion.a
                 whileHover={{color: '#00b085'}}
                 transition={{duration: 0.5}}
                 className={styles.navcomp}
-                href="https://ko-fi.com/iimoha"
                 >
-                    ادعم المشروع
+                    تواصل معنا
                 </motion.a>
+            </Link>
             
             <motion.a
             animate={show ? "show" : "hide"}

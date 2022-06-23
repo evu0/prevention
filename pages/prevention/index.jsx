@@ -27,6 +27,7 @@ const Prevention = () => {
                     title={item.title}
                     frequency={condition.frequency}
                     importance={item.importance}
+                    link={item.link}
                     />
                 );
             }
