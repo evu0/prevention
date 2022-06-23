@@ -17,11 +17,25 @@
     align-items: center;
 }
 
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.7rem;
+    margin: 20px;
+    text-align: center;
+}
+
 @media screen and (max-width: 900px){
     .cardHeader{
         font-size: 1.5rem;
     }
     .card{
+        margin: 20px 0px;
+    }
+    .intro{
+        font-size: 1.2rem;
         margin: 20px 0px;
     }
 }

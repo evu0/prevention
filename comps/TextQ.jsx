@@ -10,8 +10,9 @@ const TextQ = (props) => {
                 placeholder="الإجابة"
                 required
                 // set value of a prop in the parent component
-                name={props.name}
                 onChange={(e)=>props.setAnswer(e.target.value)}
+                pattern='^[1-9]\d*$'
+                maxLength='3'
             />
         </div>
     );

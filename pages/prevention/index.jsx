@@ -1,8 +1,6 @@
 import styles from '../../styles/Prevention.module.css';
 import {PrevDB} from '../../database/PrevDB';
-import { motion } from 'framer-motion';
 import ls from 'local-storage';
-import { useEffect } from 'react';
 import Card from '../../comps/Card';
 import Ad from '../../comps/Ad';
 import SecondaryButton from '../../comps/SecondaryButton';
@@ -36,6 +34,13 @@ const Prevention = () => {
     })
     return (  
         <div className={styles.container}>
+
+            {/* Introduction */}
+            <span className={styles.intro}>
+            بناءً على البيانات المدخلة وحسب التوصيات العلمية المبنية على البراهين، فإننا ننصح بإجراء الفحوصات التالية:
+            </span>
+
+            {/* Cards */}
             {preventionFilter}
 
             {/* Buttons */}
@@ -51,6 +56,7 @@ const Prevention = () => {
             />
 
             </div>
+
         </div>
     );
 }

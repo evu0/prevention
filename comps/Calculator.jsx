@@ -170,15 +170,15 @@ const Calculator = () => {
     return ( 
         <form onSubmit={handleSubmit} className={styles.container}>
             <TextQ
-                question="العمر"
+                question="العمر:"
                 setAnswer={setAge}
             />
             <TextQ
-                question="الوزن بالكيلوجرام"
+                question="الوزن بالكيلوجرام:"
                 setAnswer={setWeight}
             />
             <TextQ
-                question="الطول بالسانتيميتر"
+                question="الطول بالسانتيميتر:"
                 setAnswer={setHeight}
             />
             <RadioQ
