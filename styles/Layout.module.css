@@ -1,0 +1,9 @@
+.container{
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 900px){
+    .container{
+        min-height: auto;
+    }
+}

@@ -1,12 +1,13 @@
 .footer{
     width: 100%;
-    height: 4vh;
+    height: 10vh;
     z-index: 1;
     padding: 2px 0px;
     border-top: solid grey 1.5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(250, 250, 250);
 }
 
 .credit{

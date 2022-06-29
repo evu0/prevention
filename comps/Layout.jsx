@@ -4,6 +4,7 @@ import Content from "./Content";
 import Loader from "./Loader";
 import Router from "next/router";
 import { useState } from "react";
+import styles from '../styles/Layout.module.css';
 
 const Layout = ({ children }) => {
 
@@ -23,11 +24,16 @@ const Layout = ({ children }) => {
         <>
             {loading && <Loader />}
             
+            {/* 100vh without footer */}
+            <div className={styles.container}>
+
             <Navbar/>
 
             <Content>
                 { children }
             </Content>
+
+            </div>
 
             <Footer/>
         </>
