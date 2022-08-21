@@ -34,9 +34,22 @@
 @media screen and (max-width: 900px){
     .container{
         flex-direction: column;
+        height: 90vh;
         margin: 0px;
     }
     .left{
+        display: none;
         height: auto;
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .start{
+        width: 100%;
+        margin: 0px;
     }
 }

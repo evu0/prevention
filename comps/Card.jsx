@@ -15,6 +15,7 @@ const Card = (props) => {
             borderColor: '#ccc'
         }
     }
+
     const titleVariants = {
         open: {
             borderBottom : '1px solid #ccc',
@@ -25,6 +26,7 @@ const Card = (props) => {
             marginBottom: '0px',
         }
     }
+    
     const contentVariants = {
         open: {
             opacity: 1,

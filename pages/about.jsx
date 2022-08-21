@@ -1,15 +1,19 @@
 import styles from '../styles/About.module.css'
+import Image from 'next/image'
+import Intro from '../comps/Intro';
 
 const About = () => {
     return (  
         <>
         <div className={styles.container}>
 
+            <Intro title={'بدايتنا'} image={'/team.svg'}/>
+
+            <div className={styles.section}>
+
+            </div>
+
             <div className={styles.story}>
-                <h1 className={styles.title}>
-                    بدايتنا
-                    {/* transparent and takes the color of the image */}
-                </h1>
                 <div className={styles.storytext}>
                     {/* <p>
                         بدأت قصة تطبيق كشوفاتي في عيادات مستشفى طب الأسرة والمجتمع في جامعة الإمام عبدالرحمن بن فيصل،
@@ -21,6 +25,7 @@ const About = () => {
                     </p> */}
                 </div>
             </div>
+            
         </div>
         </>
     );

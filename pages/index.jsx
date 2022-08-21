@@ -14,6 +14,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      
       <div className={styles.right}>
         <Land
           title="أهلا بك في فحوصاتي"
@@ -23,6 +24,7 @@ export default function Home() {
           ابدأ الخدمة
         </button>
       </div>
+
       <div className={styles.left}>
       </div>
     </div>

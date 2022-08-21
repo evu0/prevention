@@ -1,7 +1,7 @@
 .container{
-    height: 85vh;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .story{
@@ -12,18 +12,6 @@
     align-items: center;
 }
 
-.difference{
-    flex: 1;
-}
-
-.title{
-    /* 3rem for mobile */
-    font-size: 50px;
-    font-weight: 800;
-    /* color: #fff; */
-    /* mix-blend-mode: overlay; */
-}
-
 .storytext{
     font-size: 20px;
     font-weight: 400;
@@ -31,8 +19,19 @@
     /* mix-blend-mode: overlay; */
 }
 
+.section{
+    width: 100%;
+}
+
 @media screen and (max-width: 900px){
     .container{
         height: auto;
+    }
+    .title{
+        font-size: 3rem;
+        padding: 2px 10px;
+    }
+    .left{
+        margin: 0px;
     }
 }

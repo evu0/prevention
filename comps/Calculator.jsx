@@ -172,14 +172,20 @@ const Calculator = () => {
             <TextQ
                 question="العمر:"
                 setAnswer={setAge}
+                pattern='^[1-9]\d*$'
+                maxLength='3'
             />
             <TextQ
                 question="الوزن بالكيلوجرام:"
                 setAnswer={setWeight}
+                pattern='^[1-9]\d*$'
+                maxLength='3'
             />
             <TextQ
                 question="الطول بالسانتيميتر:"
                 setAnswer={setHeight}
+                pattern='^[1-9]\d*$'
+                maxLength='3'
             />
             <RadioQ
                 question="الجنس:"
@@ -298,10 +304,14 @@ const Calculator = () => {
                 <TextQ
                     question="كم سنة دخنت؟"
                     setAnswer={setSmokingYears}
+                    pattern='^[1-9]\d*$'
+                    maxLength='3'
                 />
                 <TextQ
                     question="كم سيجارة تدخن في اليوم؟"
                     setAnswer={setSmokingAmount}
+                    pattern='^[1-9]\d*$'
+                    maxLength='3'
                 />
             </motion.div>
             )}

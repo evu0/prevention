@@ -1,25 +1,24 @@
-import styles from '../styles/TextQ.module.css'
+import styles from '../styles/TextAreaQuestion.module.css'
 
-const TextQ = (props) => {
+const TextAreaQuestion = (props) => {
     return (  
+        <>
         <div className={styles.container}>
             <span className={styles.span}>{props.question}</span>
-            <input
-                type="text"
+            <textarea
                 className={styles.input}
-                // if there is a value, set it to the value
-                placeholder={props.placeholder ? props.placeholder : "الإجابة"}
-                // if you don't want to require the user to enter something, you can set required={false}
+                rows="10"
                 required={props.required !== false && true}
+                name={props.name}
                 // set value of a prop in the parent component
                 onChange={(e)=>props.setAnswer(e.target.value)}
                 pattern={props.pattern}
                 maxLength={props.max}
-                name={props.name}
-                value={props.answer}
+                placeholder={props.placeholder ? props.placeholder : "الإجابة"}
             />
         </div>
+        </>
     );
 }
  
-export default TextQ;
+export default TextAreaQuestion;

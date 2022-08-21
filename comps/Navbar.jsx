@@ -35,7 +35,7 @@ const Navbar = ({children}) => {
 
             <Link href='/'>
                 <motion.a
-                whileHover={{color: '#00b085'}}
+                whileHover={{color: 'rgb(0, 173, 181)'}}
                 transition={{duration: 0.5}}
                 className={styles.logo}>
                     فحوصاتي
@@ -44,7 +44,7 @@ const Navbar = ({children}) => {
 
             <Link href='/'>
                 <motion.a
-                whileHover={{color: '#00b085'}}
+                whileHover={{color: 'rgb(0, 173, 181)'}}
                 transition={{duration: 0.5}}
                 className={styles.navcomp}>
                     الصفحة الرئيسية
@@ -53,7 +53,7 @@ const Navbar = ({children}) => {
 
             <Link href={'/contact'}>
                 <motion.a
-                whileHover={{color: '#00b085'}}
+                whileHover={{color: 'rgb(0, 173, 181)'}}
                 transition={{duration: 0.5}}
                 className={styles.navcomp}
                 >
@@ -71,7 +71,7 @@ const Navbar = ({children}) => {
 
             <Link href='/about'>
                 <motion.a
-                whileHover={{color: '#00b085'}}
+                whileHover={{color: 'rgb(0, 173, 181)'}}
                 transition={{duration: 0.5}}
                 className={styles.navcomp}>
                     من نحن
@@ -94,9 +94,9 @@ const Navbar = ({children}) => {
                     </div>
                 </Link>
 
-                <Link href="https://ko-fi.com/iimoha">
+                <Link href="/contact">
                     <div className={styles.mobileComp}>
-                        أدعم المشروع
+                        تواصل معنا
                     </div>
                 </Link>
 
