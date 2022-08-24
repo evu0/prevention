@@ -4,7 +4,7 @@
     width: 200px;
     height: 300px;
     background-color: #fcfcfc;
-    border: rgb(200, 200, 200) solid 1px;
+    border: rgb(0, 173, 181) solid 1px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -23,7 +23,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 1px solid grey;
+    border: 1px solid rgb(200, 200, 200);
 }
 
 .avatar{
@@ -54,22 +54,25 @@
 @media screen and (max-width: 900px){
     .container{
         width: 100%;
+        height: 85px;
         padding: 0px;
         margin: 5px 0px;
+        flex-direction: row;
+    }
+    .wrapper{
+        margin: 0px 10px;
     }
     .pic{
         width: 75px;
         height: 75px;
         border-radius: 50%;
-        border: 1px solid grey;
+        border: 1px solid rgb(200, 200, 200);
     }
     .avatar{
         border-radius: 50%;
     }
     .info{
-        flex: 3;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         width: 100%;
         height: 100%;

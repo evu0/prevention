@@ -16,7 +16,7 @@ const About = () => {
                 <PersonCard name={'محمد الحمود'} role={'المؤسس'} pic={'/moha.png'} link={'iimyha'} />
                 <PersonCard name={'د. عاصم العبدالقادر'} role={'الشريك المؤسس'} pic={'/aasm.jpg'} link={'AssimAbdulKader'} />
                 <PersonCard name={'خليل الوطيان'} role={'كاتب محتوى'} pic={'/khalil.jpg'} link={'xkhalilz'} />
-                <PersonCard name={'حسين الحواج'} role={'كاتب محتوى'} pic={'/hawaj.jpg'} link={'iimyha'} />
+                <PersonCard name={'حسين الحواج'} role={'كاتب محتوى'} pic={'/hawaj.jpg'} link={'HussainHWJ'} />
 
                 {/* <span className={styles.title}>
                     قصتنا
