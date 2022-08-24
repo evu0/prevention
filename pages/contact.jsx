@@ -68,7 +68,7 @@ const Contact = () => {
 
             <Intro title={'تواصل معنا'} image={'/contact.svg'}/>
 
-            <div className={styles.box}>
+            <div className={styles.section}>
 
                 <form ref={form} onSubmit={handleSubmit} className={styles.form}>
 
@@ -86,11 +86,12 @@ const Contact = () => {
                     name="message"
                     />
 
-                    <div className={styles.section}>
+                    <div className={styles.btn}>
                         <button className={styles.submit} type='submit'>
                             إرسال
                         </button>
                     </div>
+
                 </form>
 
             </div>
