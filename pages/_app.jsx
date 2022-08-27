@@ -17,9 +17,9 @@ function MyApp({ Component, pageProps, router }) {
 
     <Layout>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.5 }}
         key={router.route}
       className="motion">
 
