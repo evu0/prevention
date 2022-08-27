@@ -2,6 +2,10 @@ import styles from '../styles/About.module.css'
 import Image from 'next/image'
 import Intro from '../comps/Intro';
 import PersonCard from '../comps/PersonCard';
+import moha from '../public/moha.png'
+import aasm from '../public/aasm.jpg'
+import khalil from '../public/khalil.jpeg'
+import hawaj from '../public/hawaj.jpeg'
 
 const About = () => {
     return (  
@@ -13,10 +17,10 @@ const About = () => {
 
             <div className={styles.section}>
 
-                <PersonCard name={'محمد الحمود'} role={'المؤسس'} pic={'/moha.png'} link={'iimyha'} />
-                <PersonCard name={'د. عاصم العبدالقادر'} role={'الشريك المؤسس'} pic={'/aasm.jpg'} link={'AssimAbdulKader'} />
-                <PersonCard name={'خليل الوطيان'} role={'كاتب محتوى'} pic={'/khalil.jpeg'} link={'xkhalilz'} />
-                <PersonCard name={'حسين الحواج'} role={'كاتب محتوى'} pic={'/hawaj.jpeg'} link={'HussainHWJ'} />
+                <PersonCard name={'محمد الحمود'} role={'المؤسس'} pic={moha} link={'iimyha'} />
+                <PersonCard name={'د. عاصم العبدالقادر'} role={'الشريك المؤسس'} pic={aasm} link={'AssimAbdulKader'} />
+                <PersonCard name={'خليل الوطيان'} role={'كاتب محتوى'} pic={khalil} link={'xkhalilz'} />
+                <PersonCard name={'حسين الحواج'} role={'كاتب محتوى'} pic={hawaj} link={'HussainHWJ'} />
 
                 {/* <span className={styles.title}>
                     قصتنا

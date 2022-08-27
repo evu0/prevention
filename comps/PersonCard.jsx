@@ -34,7 +34,7 @@ const PersonCard = (props) => {
 
             <div className={styles.wrapper}>
                 <div className={styles.pic}>
-                    <Image className={styles.avatar} src={props.pic} alt="person" layout='fill' objectFit='cover' loading={'eager'} placeholder={"blur"} />
+                    <Image className={styles.avatar} src={props.pic} alt="person" layout='fill' objectFit='cover' loading={'lazy'} placeholder={"blur"} />
                 </div>
             </div>
 
