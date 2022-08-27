@@ -13,7 +13,7 @@ const Intro = (props) => {
             </div>
 
             <div className={styles.left}>
-                <Image src={props.image} objectFit='contain' layout='fill' width='100%' height='100%' priority />
+                <Image src={props.image} objectFit='contain' layout='fill' width='100%' height='100%' priority={true} />
             </div>
 
         </div>
