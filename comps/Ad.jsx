@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Ad = (props) => {
     return (  
         <>
-            <Link href={'https://appointment.mouwasat.com'}>
+            <Link href={'/prevention/appointments'}>
             <motion.div
             initial={{opacity:0}}
             animate={{opacity:1}}

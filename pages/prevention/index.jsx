@@ -4,6 +4,7 @@ import ls from 'local-storage';
 import Card from '../../comps/Card';
 import Ad from '../../comps/Ad';
 import SecondaryButton from '../../comps/SecondaryButton';
+import Intro from '../../comps/Intro';
 
 const Prevention = () => {
     
@@ -36,6 +37,7 @@ const Prevention = () => {
         <div className={styles.container}>
 
             {/* Introduction */}
+            <Intro title="الفحوصات" image="/analysis.svg" />
             <span className={styles.intro}>
             بناءً على البيانات المدخلة وحسب التوصيات العلمية المبنية على البراهين، فإننا ننصح بإجراء الفحوصات التالية:
             </span>
@@ -47,7 +49,7 @@ const Prevention = () => {
             <div className={styles.buttons}>
 
             <Ad
-            text="أحجز موعد لفحوصاتك في مستشفى المواساة الآن"
+            text="أحجز موعدًا لفحوصاتك الآن"
             />
 
             <SecondaryButton

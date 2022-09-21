@@ -4,7 +4,7 @@
     height: auto;
     z-index: 1;
     padding: 2px 0px;
-    border-top: solid grey 1.5px;
+    border-top: rgb(200, 200, 200) solid 1.5px;
     display: flex;
     justify-content: center;
     align-items: center;
