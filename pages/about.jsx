@@ -18,7 +18,7 @@ const About = () => {
             <div className={styles.section}>
 
                 <PersonCard name={'محمد الحمود'} role={'المؤسس'} pic={moha} link={'iimyha'} />
-                <PersonCard name={'د. عاصم العبدالقادر'} role={'الشريك المؤسس'} pic={aasm} link={'AssimAbdulKader'} />
+                <PersonCard name={'د. عاصم العبدالقادر'} role={'المشرف'} pic={aasm} link={'AssimAbdulKader'} />
                 <PersonCard name={'خليل الوطيان'} role={'كاتب محتوى'} pic={khalil} link={'xkhalilz'} />
                 <PersonCard name={'حسين الحواج'} role={'كاتب محتوى'} pic={hawaj} link={'HussainHWJ'} />
 
