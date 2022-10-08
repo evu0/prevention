@@ -38,6 +38,7 @@ const Prevention = () => {
 
             {/* Introduction */}
             <Intro title="الفحوصات" image="/analysis.svg" />
+            
             <span className={styles.intro}>
             بناءً على البيانات المدخلة وحسب التوصيات العلمية المبنية على البراهين، فإننا ننصح بإجراء الفحوصات التالية:
             </span>

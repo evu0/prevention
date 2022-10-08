@@ -1,17 +1,22 @@
 import styles from '../styles/Consent.module.css';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import ls from 'local-storage';
 import Router from 'next/router';
 
 
 const Consent = () => {
-    const [consent, setConsent] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         ls.set('screen-consent', true);
         Router.push('/questions');
     }
+
+    useEffect(() => {
+        if (ls.get('screen-consent') === true) {
+            Router.push('/questions');
+        }
+    }, []);
 
     return (  
         <>
@@ -23,7 +28,7 @@ const Consent = () => {
                     <div className={styles.content}>
                         <span>
                             يتطلب عليك لاستخدام تطبيق فحوصاتي تسجيل بياناتك الشخصية لنتمكن من تحديد الفحوصات المناسبة لك؛
-                            فأعلم رعاك الله أن جميع بياناتك المستخدمة في التطبيق لا يتم تخزينها أو نشرها بأي شكل من الأشكال,
+                            فأعلم رعاك الله أن جميع بياناتك المستخدمة في التطبيق يتم تخزينها في جهازك فقط ولا يتم نشرها بأي شكل من الأشكال,
                             يضمن لك تطبيق فحوصاتي الأمان والسرية لجميع بياناتك.
                         </span>
                     </div>

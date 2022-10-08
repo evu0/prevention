@@ -55,6 +55,7 @@
 .call{
     border: solid 2px rgb(0, 173, 181);
     border-radius: 5px;
+    color: rgb(0, 173, 181);
 }
 
 @media screen and (max-width: 900px){
@@ -76,10 +77,11 @@
     }
     .btn:nth-child(even){
         margin-bottom: 20px;
+        margin-top: 0px
     }
     .btn:nth-child(odd){
         margin-top: 20px;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
     .title{
         font-size: 1.5rem;
