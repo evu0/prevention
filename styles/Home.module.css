@@ -45,22 +45,20 @@
     font-weight: bold;
 }
 
+.landMobile{
+    display: none;
+}
+
 @media screen and (max-width: 900px){
     .container{
-        flex-direction: column;
-        height: 90vh;
+        flex-direction: column-reverse;
         margin: 0px;
     }
     .left{
         display: none;
-        height: auto;
     }
     .right{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
+        display: none;
     }
     .start{
         width: 100%;
@@ -72,5 +70,8 @@
         margin-top: 15px;
         margin-bottom: 15px;
         margin-right: 0px;
+    }
+    .landMobile{
+        display: block;
     }
 }
