@@ -293,26 +293,27 @@ export const PrevDB = [
             },
         ]
     },
-    // {
-    //     id: 13,
-    //     title: 'عدوى السل',
-    //     importance: '',
-    //     conditions: [
-    //         {
-    //             condition: 1,
-    //             frequency: 'لا يوجد معلومات',
-    //             minAge: 0,
-    //             maxAge: 999,
-    //             bmi: 0,
-    //             gender: 0,
-    //             preg: 0,
-    //             menopause: 0,
-    //             smokeb4: 0,
-    //             sex: 0,
-    //             risk: [0], // ????
-    //         },// for population with increased prevalence, at increased risk (person who born in or a former resident of countries with increased TB prevalence, or lived in high-risk congregate settings like homeless shelters and correctional facilities.
-    //     ]
-    // },
+    {
+        id: 13,
+        title: 'فحص عدوى السل',
+        importance: 'يُعرف مرض السل بأنه مرض مزمن ومعدٍ يُصاب به الشخص نتيجة لعدوى بكتيرية عادة ما تهاجم الرئتين؛ ولكن يمكن أن تهاجم أي جزء من الجسم مثل الكلى والدماغ. قد يكون الشخص حاملاً للبكتيريا؛ حيث تبقى البكتيريا خاملة داخل الجسم دون أن تظهر على الشخص أي أعراض، لكن قد تتحول العدوى الكامنة إلى المرض النشط.',
+        link: 'https://www.moh.gov.sa/HealthAwareness/EducationalContent/Diseases/Infectious/Pages/004.aspx',
+        conditions: [
+            {
+                condition: 1,
+                frequency: 'لا يوجد معلومات',
+                minAge: 0,
+                maxAge: 999,
+                bmi: 0,
+                gender: 0,
+                preg: 0,
+                menopause: 0,
+                smokeb4: 0,
+                sex: 0,
+                risk: ["HIV", "IV"],
+            },// for population with increased prevalence, at increased risk (person who born in or a former resident of countries with increased TB prevalence, or lived in high-risk congregate settings like homeless shelters and correctional facilities.
+        ]
+    },
     {
         id: 14,
         title: 'قياس مؤشر كتلة الجسم (BMI)',

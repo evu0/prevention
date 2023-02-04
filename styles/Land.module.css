@@ -5,24 +5,29 @@
 }
 
 .title{
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: bold;
-    margin: 25px 0px;
+    margin: 15px 0px;
 }
 
 .description{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: rgb(57, 62, 70);
-    margin: 25px 0px;
+    margin: 10px 0px;
+    width: 50%;
+    text-align: justify;
 }
 
 @media screen and (max-width: 900px){
     .title{
         font-size: 3.5rem;
         text-align: center;
+        margin: 25px 0px;
     }
     .description{
         font-size: 1rem;
         margin-top: 0px;
+        margin-bottom: 25px;
+        width: auto;
     }   
 }

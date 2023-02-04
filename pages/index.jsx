@@ -2,7 +2,6 @@ import Land from '../comps/Land'
 import styles from '../styles/Home.module.css'
 import Router from 'next/router'
 import ls from 'local-storage'
-import SecondaryButton from '../comps/SecondaryButton'
 
 export default function Home() {
     const handleClick = () => {
