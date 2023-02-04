@@ -8,7 +8,7 @@ const Footer = ({ children }) => {
     <footer className={styles.footer}>
           <Link href='https://twitter.com/iimyha'>
             <a className={styles.credit}>
-              جميع الحقوق محفوظة لمحمد الحمود - 2022
+              جميع الحقوق محفوظة لمحمد الحمود - 2023
             </a>
           </Link>
     </footer>
