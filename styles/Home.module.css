@@ -49,8 +49,10 @@
     display: none;
 }
 
-@media screen and (max-width: 900px){
+/* If width 900 or ipad landscape */
+@media screen and (max-width: 900px) {
     .container{
+        display: none;
         flex-direction: column-reverse;
         margin: 0px;
     }
@@ -58,6 +60,26 @@
         display: none;
     }
     .right{
+        display: none;
+    }
+    .start{
+        width: 100%;
+        margin: 0px;
+    }
+    .load{
+        width: 100%;
+        margin: 0px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-right: 0px;
+    }
+    .landMobile{
+        display: block;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1180px){
+    .container{
         display: none;
     }
     .start{

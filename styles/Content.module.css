@@ -3,7 +3,7 @@
     height: 100%;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px), (orientation: landscape) and (max-width: 1180px){
     .content{
         width: auto;
         margin: 0px 12px;

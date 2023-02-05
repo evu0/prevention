@@ -18,7 +18,7 @@
     text-align: justify;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px), (orientation: landscape) and (max-width: 1180px){
     .title{
         font-size: 3.5rem;
         text-align: center;
@@ -29,5 +29,5 @@
         margin-top: 25px;
         margin-bottom: 25px;
         width: auto;
-    }   
+    }
 }

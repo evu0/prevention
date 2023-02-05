@@ -41,7 +41,7 @@
     margin: 10px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px), (orientation: landscape) and (max-device-width: 1180px){
     .form{
         min-width: auto;
         max-width: 500px;
@@ -53,6 +53,7 @@
         overflow: hidden;
     }
     .section{
+        width: 100%;
         margin: 10px 0px;
     } 
 }
