@@ -14,7 +14,7 @@
     font-size: 1.4rem;
     color: rgb(57, 62, 70);
     margin: 10px 0px;
-    width: 50%;
+    max-width: 900px;
     text-align: justify;
 }
 
