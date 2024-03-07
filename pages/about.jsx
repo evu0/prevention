@@ -17,10 +17,10 @@ const About = () => {
 
             <div className={styles.section}>
 
-                <PersonCard name={'محمد الحمود'} role={'المؤسس'} pic={moha} link={'iimyha'} />
+                <PersonCard name={'د. محمد الحمود'} role={'المؤسس'} pic={moha} link={'iimyha'} />
                 <PersonCard name={'د. عاصم العبدالقادر'} role={'المشرف'} pic={aasm} link={'AssimAbdulKader'} />
-                <PersonCard name={'خليل الوطيان'} role={'كاتب محتوى'} pic={khalil} link={'xkhalilz'} />
-                <PersonCard name={'حسين الحواج'} role={'كاتب محتوى'} pic={hawaj} link={'HussainHWJ'} />
+                <PersonCard name={'د. خليل الوطيان'} role={'كاتب محتوى'} pic={khalil} link={'xkhalilz'} />
+                <PersonCard name={'د. حسين الحواج'} role={'كاتب محتوى'} pic={hawaj} link={'HussainHWJ'} />
 
             </div>
 
