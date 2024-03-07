@@ -2,7 +2,7 @@ import styles from '../styles/About.module.css'
 import Image from 'next/image'
 import Intro from '../comps/Intro';
 import PersonCard from '../comps/PersonCard';
-import moha from '../public/moha.png'
+import moha from '../public/moha.jpg'
 import aasm from '../public/aasm.jpg'
 import khalil from '../public/khalil.jpeg'
 import hawaj from '../public/hawaj.jpeg'
