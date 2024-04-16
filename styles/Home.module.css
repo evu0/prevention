@@ -78,7 +78,7 @@
     }
 }
 
-@media screen and (orientation: landscape) and (max-width: 1180px){
+@media screen and (max-width: 1366px){
     .container{
         display: none;
     }
