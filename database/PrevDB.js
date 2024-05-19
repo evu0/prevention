@@ -190,27 +190,27 @@ export const PrevDB = [
             },
         ]
     },
-    {
-        id: 8,
-        title: 'فحص الاكتئاب',
-        importance: "الاكتئاب مرض شائع يجعل نظرة الإنسان للحياة سوداوية، لا يستمتع بشيء ودائما حزين، افحص واجعل حياتك أجمل. ٥۰% من الناس اللذين يعانون من الاكتئاب لم يتم تشخيصهم بعد، وهو أكثر مرض نفسي منتشر في العيادات الأولية.",
-        link: 'https://www.moh.gov.sa/awarenessplateform/VariousTopics/Pages/Depression.aspx',
-        conditions: [
-            {
-                condition: 1,
-                frequency: 'لا توجد معلومات دقيقة',
-                minAge: 18,
-                maxAge: 999,
-                bmi: 0,
-                gender: 0,
-                preg: 0,
-                menopause: 0,
-                smokeb4: 0,
-                sex: 0,
-                risk: [0],
-            },
-        ]
-    },
+    // {
+    //    id: 8,
+    //    title: 'فحص الاكتئاب',
+    //    importance: "الاكتئاب مرض شائع يجعل نظرة الإنسان للحياة سوداوية، لا يستمتع بشيء ودائما حزين، افحص واجعل حياتك أجمل. ٥۰% من الناس اللذين يعانون من الاكتئاب لم يتم تشخيصهم بعد، وهو أكثر مرض نفسي منتشر في العيادات الأولية.",
+    //    link: 'https://www.moh.gov.sa/awarenessplateform/VariousTopics/Pages/Depression.aspx',
+    //    conditions: [
+    //        {
+    //            condition: 1,
+    //            frequency: 'لا توجد معلومات دقيقة',
+    //            minAge: 18,
+    //            maxAge: 999,
+    //            bmi: 0,
+    //            gender: 0,
+    //            preg: 0,
+    //            menopause: 0,
+    //            smokeb4: 0,
+    //            sex: 0,
+    //            risk: [0],
+    //        },
+    //    ]
+    // },
     {
         id: 9,
         title: 'فحص سكر الحمل',
